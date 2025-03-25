@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM alpine:3.19
 
 # Installs latest Chromium package.
 RUN apk upgrade --no-cache --available \
@@ -16,7 +16,6 @@ COPY local.conf /etc/fonts/local.conf
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
     && chown -R chrome:chrome /usr/src/app
-
 # Run Chrome as non-privileged
 USER chrome
 WORKDIR /usr/src/app
@@ -27,4 +26,3 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 # Autorun chrome headless
 ENV CHROMIUM_FLAGS="--disable-software-rasterizer --disable-dev-shm-usage"
 ENTRYPOINT ["chromium-browser", "--headless", "--no-sandbox", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222"]
-
