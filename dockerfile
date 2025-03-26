@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 alpine:3.19
+FROM alpine:3.19
 
 # Installs latest Chromium package.
 RUN apk upgrade --no-cache --available \
