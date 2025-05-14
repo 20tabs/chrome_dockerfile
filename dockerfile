@@ -26,4 +26,4 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 # Autorun chrome headless
 ENV CHROMIUM_FLAGS="--disable-software-rasterizer --disable-dev-shm-usage"
 EXPOSE 9222
-ENTRYPOINT ["chromium-browser", "--headless", "--no-sandbox", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222"]
+ENTRYPOINT ["chromium-browser", "--headless", "--no-sandbox", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222", "--allowed-origins=*"]
