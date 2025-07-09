@@ -4,9 +4,14 @@ FROM alpine:3.19
 RUN apk upgrade --no-cache --available \
     && apk add --no-cache \
       chromium-swiftshader \
-      ttf-freefont \
-      font-noto-emoji \
-      font-liberation \
+      fontconfig \
+      freetype \
+      ttf-dejavu \
+      ttf-liberation \
+      ttf-opensans \
+      ttf-ubuntu-font-family \
+      font-noto \
+      font-noto-cjk
     && apk add --no-cache \
       --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
       font-wqy-zenhei
